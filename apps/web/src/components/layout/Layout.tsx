@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     <div className="min-h-screen bg-background">
       <Header />
       <Sidebar />
-      <main className="fixed inset-x-0 top-16 md:left-52 transition-all duration-300 overflow-y-auto">
+      <main className="fixed inset-x-0 top-16 bottom-0 md:left-52  transition-all duration-300 overflow-y-auto">
         {children}
       </main>
     </div>
