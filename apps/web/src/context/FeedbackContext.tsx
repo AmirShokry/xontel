@@ -1,12 +1,6 @@
-import {
-  type ReactNode,
-  useContext,
-  useState,
-  createContext,
-  useEffect,
-} from "react";
+import { type ReactNode, useContext, createContext } from "react";
 import type { Feedback } from "@/types/feedbacks";
-import { subscribeToFeedbackSnapshot } from "@/data/feedbacks";
+import { useSubscribeFeedbacks } from "@/hooks/useSubscribeFeedbacks";
 interface FeedbackContenxtType {
   feedbacks: Feedback[];
   isLoading: boolean;
@@ -18,31 +12,7 @@ const FeedbacksContext = createContext<FeedbackContenxtType | undefined>(
 );
 
 export const FeedbackProvider = ({ children }: { children: ReactNode }) => {
-  const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
-
-  useEffect(() => {
-    setIsLoading(true);
-    setError(null);
-
-    // Subscribe to real-time updates
-    const unsubscribe = subscribeToFeedbackSnapshot({
-      onUpdate: (updatedFeedbacks) => {
-        setFeedbacks(updatedFeedbacks);
-        setIsLoading(false);
-      },
-      onError: (err) => {
-        setError(err);
-        setIsLoading(false);
-      },
-    });
-
-    // Cleanup subscription on unmount
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+  const { feedbacks, isLoading, error } = useSubscribeFeedbacks();
 
   return (
     <FeedbacksContext.Provider value={{ feedbacks, isLoading, error }}>
