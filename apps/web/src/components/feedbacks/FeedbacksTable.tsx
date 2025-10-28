@@ -41,7 +41,7 @@ export function FeedbackTable({ feedbacks }: FeedbackTableProps) {
             </TableCell>
             <TableCell>{feedback.score} stars</TableCell>
 
-            <TableCell className="max-w-md truncate" title={feedback.notes}>
+            <TableCell className="max-w-20 truncate" title={feedback.notes}>
               {feedback.notes}
             </TableCell>
           </TableRow>

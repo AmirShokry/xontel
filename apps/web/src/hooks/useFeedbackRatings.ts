@@ -9,13 +9,12 @@
 import type { Feedback } from "@/types/feedbacks";
 import { useMemo } from "react";
 export function useFeedbackRatings(feedbacks: Feedback[]) {
-  // Use a traditional loop instead of reduce for calculating counts.
   const ratings = useMemo(() => {
     // Initialize counts array for scores 1 through 5 (indices 0 through 4).
     const counts = new Array(5).fill(0);
     let total = 0; // Keep track of the total valid feedbacks
 
-    // 1. Calculate the counts for each rating (1-5) and the total.
+    // Calculate the counts for each rating (1-5) and the total.
     for (const fb of feedbacks) {
       const score = Number(fb.score);
 
@@ -27,7 +26,7 @@ export function useFeedbackRatings(feedbacks: Feedback[]) {
       }
     }
 
-    // 2. Map the counts into the final structured array.
+    // Map the counts into the final structured array.
     return counts.map((count, i) => ({
       rating: String(i + 1), // The rating is the index + 1
       count,

@@ -22,7 +22,7 @@ export default function Dashboard() {
   return (
     <>
       <div className="h-full p-6 flex flex-col gap-4 ">
-        <div className="basis-1/2 w-1/4 ">
+        <div className="basis-1/2 min-w-[220px] w-[40%] self-end max-md:w-full">
           <FeedbackKPIDistrubtion feedbacks={feedbacks} />
         </div>
 
