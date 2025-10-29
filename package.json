@@ -5,8 +5,7 @@
     "dev": "turbo run dev",
     "web": "turbo run --filter=web dev",
     "mobile": "turbo run --filter=mobile dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "lint": "turbo run lint"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
@@ -17,5 +16,6 @@
   "name": "with-vite",
   "dependencies": {
     "firebase": "^12.4.0"
-  }
+  },
+  "version": "1.0.0"
 }
