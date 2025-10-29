@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 import { createContext, useContext } from "react";
 import { useSubscribeMessages } from "@/hooks/useSubscribeMessages";
-import { EMPLOYEE_SENDER_ID } from "@/constants";
-import type { Message } from "@/types/chat";
+import { EMPLOYEE_SENDER_ID } from "@repo/shared/constants";
+import type { Message } from "@repo/shared/types/chat";
 
 type MessagesContext = {
   messages: Message[];

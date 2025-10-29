@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { subscribeToConversationsSnapshot } from "@/data/conversations";
-import type { Conversation } from "@/types/chat";
+import type { Conversation } from "@repo/shared/types/chat";
 
 export const useSubscribeConversations = () => {
   const [conversations, setConversations] = useState<Conversation[]>([]);

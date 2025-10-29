@@ -1,6 +1,6 @@
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
 import { db } from "@repo/firebase";
-import type { Conversation } from "@/types/chat";
+import type { Conversation } from "@repo/shared/types/chat";
 /**
  * Subscribe to all conversations, ordered by last message timestamp
  */

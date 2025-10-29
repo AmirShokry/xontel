@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { useFeedbackContext } from "@/context/FeedbackContext";
+import { EMPLOYEE_NAME, EMPLOYEE_SENDER_ID } from "@/constants";
 
 /**
  * Generates a deterministic employee ID based on employee name.
@@ -7,7 +8,7 @@ import { useFeedbackContext } from "@/context/FeedbackContext";
  * - Others get: emp_name[underscore_separated]_randomNumber
  */
 function generateEmployeeId(name: string): string {
-  if (name === "Alice Johnson") return "emp_alice_johnson_42";
+  if (name === EMPLOYEE_NAME) return EMPLOYEE_SENDER_ID;
   // Convert name to lowercase and replace spaces with underscores
   const nameSlug = name?.toLowerCase().replace(/\s+/g, "_");
   // Generate a random number between 1 and 999

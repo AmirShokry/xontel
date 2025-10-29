@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { subscribeToEmployeeMessages } from "@/data/messages";
-import type { Message } from "@/types/chat";
+import type { Message } from "@repo/shared/types/chat";
 
 export const useSubscribeMessages = (selectedEmployeeId: string | null) => {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -19,8 +19,8 @@ export const useSubscribeMessages = (selectedEmployeeId: string | null) => {
 
     const unsubscribe = subscribeToEmployeeMessages({
       employeeId: selectedEmployeeId,
-      onUpdate: (updatedConversations) => {
-        setMessages(updatedConversations);
+      onUpdate: (newMessages) => {
+        setMessages(newMessages);
         setIsLoading(false);
       },
       onError: (err) => {

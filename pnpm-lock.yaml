@@ -39,6 +39,9 @@ importers:
       '@repo/firebase':
         specifier: workspace:^
         version: link:../../packages/firebase
+      '@repo/shared':
+        specifier: workspace:^
+        version: link:../../packages/shared
       expo:
         specifier: ~54.0.21
         version: 54.0.21(@babel/core@7.28.5)(@expo/metro-runtime@6.1.2)(expo-router@6.0.14)(react-native@0.81.5)(react@19.1.0)
@@ -145,6 +148,9 @@ importers:
       '@repo/firebase':
         specifier: workspace:^
         version: link:../../packages/firebase
+      '@repo/shared':
+        specifier: workspace:^
+        version: link:../../packages/shared
       '@tailwindcss/vite':
         specifier: ^4.1.16
         version: 4.1.16(vite@7.1.12)
@@ -220,6 +226,8 @@ importers:
         version: 7.1.12(@types/node@24.9.2)
 
   packages/firebase: {}
+
+  packages/shared: {}
 
   packages/typescript-config: {}
 

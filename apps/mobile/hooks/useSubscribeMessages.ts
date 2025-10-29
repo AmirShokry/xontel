@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { subscribeToEmployeeMessages } from "@/data/messages";
-import type { Message } from "@/types/chat";
+import type { Message } from "@repo/shared/types/chat";
 
 export const useSubscribeMessages = (currentEmployeeId: string | null) => {
   const [messages, setMessages] = useState<Message[]>([]);

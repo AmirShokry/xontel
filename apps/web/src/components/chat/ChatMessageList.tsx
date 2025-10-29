@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import type { Message } from "@/types/chat";
-import { HR_SENDER_ID } from "@/constants";
+import type { Message } from "@repo/shared/types/chat";
+import { HR_SENDER_ID } from "@repo/shared/constants";
 interface MessageListProps {
   messages: Message[];
 }

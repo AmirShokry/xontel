@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { createContext, useContext, useState } from "react";
 import { useSubscribeMessages } from "@/hooks/useSubscribeMessages";
 
-import type { Message } from "@/types/chat";
+import type { Message } from "@repo/shared/types/chat";
 
 type MessagesContext = {
   selectedEmployeeId: string | null;

@@ -11,9 +11,8 @@ import {
   setDoc,
 } from "firebase/firestore";
 import { db } from "@repo/firebase";
-import type { NewMessage } from "@/types/chat";
-import type { Message } from "@/types/chat";
-import { HR_NAME } from "@/constants";
+import type { Message, NewMessage } from "@repo/shared/types/chat";
+import { HR_NAME } from "@repo/shared/constants";
 
 interface SubscribeToMessagesParams {
   employeeId: string;
