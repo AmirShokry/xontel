@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { sendMessageAPI } from "@/data/messages";
 import { HR_SENDER_ID } from "@/constants";
-import { useCallback } from "react";
 
 export function useSendMessage(employeeId: string, employeeName: string) {
   const [inputText, setInputText] = useState("");
   const [isSending, setIsSending] = useState(false);
 
-  const handleSendMessage = useCallback(async (e: React.FormEvent) => {
+  // Reset input when employee changes
+  useEffect(() => {
+    setInputText("");
+  }, [employeeId]);
+
+  const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!inputText.trim() || isSending) return;
 
@@ -28,7 +32,7 @@ export function useSendMessage(employeeId: string, employeeName: string) {
     } finally {
       setIsSending(false);
     }
-  }, []);
+  };
 
   return {
     inputText,
