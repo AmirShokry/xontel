@@ -1,7 +1,11 @@
+Note that this project depends on pnpm workspaces.. So ensure that pnpm is installed.
+
 # Xontel - HR Feedback System & one-one chat
 
 A monorepo featuring web and mobile applications built with React and React Native. Designed for handling conversations and collecting structured feedback with real-time capabilities powered by Firebase.
 
+
+ 
 ## 🏗️ Monorepo Structure
 
 This project uses **pnpm workspaces** and **Turbo** for efficient monorepo management:
@@ -48,15 +52,9 @@ xontel/
 **Key Features:**
 
 - Real-time messaging interface
-- Gesture-based navigation
-- Platform-specific optimizations
-- Haptic feedback support
-
 **Tech Stack:**
 
-- React Native 0.81
-- Expo 54
-- React Navigation 7
+- React native & expo
 - NativeWind 4 (Tailwind for React Native)
 
 ---
@@ -70,8 +68,6 @@ Centralized Firebase configuration and utilities for backend integration.
 **Purpose:**
 
 - Unified Firebase initialization and management
-- Shared authentication and database utilities
-- Real-time database listeners setup
 
 **Used by:** Web and Mobile applications
 
@@ -93,19 +89,6 @@ Centralized location for shared types and constants across applications.
 - `constants/index.ts` - Shared application constants
 
 **Used by:** Web and Mobile applications
-
----
-
-#### **TypeScript Config Package** (`packages/typescript-config`)
-
-Reusable TypeScript configurations for consistent type-checking across the monorepo.
-
-**Contents:**
-
-- `base.json` - Base TypeScript configuration
-- `vite.json` - Vite-specific TypeScript configuration
-
----
 
 ## 📦 Key Dependencies
 
