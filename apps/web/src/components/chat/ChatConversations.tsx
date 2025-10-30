@@ -1,9 +1,12 @@
 import { useConversationContext } from "@/context/ConversationsContext";
 import { useMessagesContext } from "@/context/MessagesContext";
+import { useNotificationsContext } from "@/context/NotificationsContext";
 import Spinner from "@/assets/icons/spinner.svg?react";
+
 export function ChatConversations() {
   const { employeesConversations, isLoading } = useConversationContext();
   const { setSelectedEmployeeId, selectedEmployeeId } = useMessagesContext();
+  const { unreadEmployees } = useNotificationsContext();
   if (isLoading) return <Spinner className="size-8" />;
 
   return (
@@ -16,7 +19,12 @@ export function ChatConversations() {
           onClick={() => setSelectedEmployeeId(emp.employeeId)}
           key={emp.employeeId}
         >
-          <p className="font-medium">{emp.employeeName}</p>
+          <div className="flex items-center justify-between">
+            <p className="font-medium">{emp.employeeName}</p>
+            {unreadEmployees.has(emp.employeeId) && (
+              <span className="text-xl">🔔</span>
+            )}
+          </div>
           <p className="text-sm text-muted-foreground">{emp.lastMessage}</p>
           <p className="text-xs text-muted-foreground">
             {emp?.lastMessageTimestamp

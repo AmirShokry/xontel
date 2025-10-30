@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useFeedbackContext } from "@/context/FeedbackContext";
-import { EMPLOYEE_NAME, EMPLOYEE_SENDER_ID } from "@/constants";
+import { EMPLOYEE_NAME, EMPLOYEE_SENDER_ID } from "@repo/shared/constants";
 
 /**
  * Generates a deterministic employee ID based on employee name.

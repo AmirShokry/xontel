@@ -1,5 +1,5 @@
 import { FlatList, Text, View } from "react-native";
-import { EMPLOYEE_SENDER_ID } from "@/constants";
+import { EMPLOYEE_SENDER_ID } from "@repo/shared/constants";
 import { useMessagesContext } from "@/context/MessagesContext";
 import { useRef } from "react";
 export function MessagesList() {

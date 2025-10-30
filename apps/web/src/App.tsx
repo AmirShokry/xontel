@@ -4,6 +4,8 @@ import { SidebarProvider } from "@/context/SiderbarContext";
 import { FeedbackProvider } from "@/context/FeedbackContext";
 import { ConversationsProvider } from "@/context/ConversationsContext";
 import { MessagesProvider } from "@/context/MessagesContext";
+import { NotificationsProvider } from "@/context/NotificationsContext";
+
 function App() {
   return (
     <>
@@ -11,9 +13,11 @@ function App() {
         <FeedbackProvider>
           <ConversationsProvider>
             <MessagesProvider>
-              <Layout>
-                <Outlet />
-              </Layout>
+              <NotificationsProvider>
+                <Layout>
+                  <Outlet />
+                </Layout>
+              </NotificationsProvider>
             </MessagesProvider>
           </ConversationsProvider>
         </FeedbackProvider>

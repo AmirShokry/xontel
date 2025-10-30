@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { sendMessageAPI } from "@/data/messages";
-import { HR_SENDER_ID } from "@/constants";
+import { HR_SENDER_ID } from "@repo/shared/constants";
 
 export function useSendMessage(employeeId: string, employeeName: string) {
   const [inputText, setInputText] = useState("");
